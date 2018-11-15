@@ -2,12 +2,13 @@
   "name": "nuxt-pay",
   "version": "1.0.0",
   "description": "彭涧的第一个 Nuxt 个人项目",
+  "title": "彭涧😄",
   "author": "james",
   "private": true,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "start": "nuxtart",
     "generate": "nuxt generate"
   },
   "dependencies": {
