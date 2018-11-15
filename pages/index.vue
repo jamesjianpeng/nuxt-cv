@@ -3,7 +3,7 @@
     <div>
       <logo/>
       <h1 class="title">
-        James hello world ~
+        James hello world Nuxt play ~
         <br />
         <a href="https://www.pengjiandry.com">彭涧的博客</a>
       </h1>
