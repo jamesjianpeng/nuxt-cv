@@ -3,7 +3,9 @@
     <div>
       <logo/>
       <h1 class="title">
-        James <a href="https://www.pengjiandry.com">彭涧的博客</a>
+        James 
+        <br />
+        <a href="https://www.pengjiandry.com">彭涧的博客</a>
       </h1>
     </div>
   </section>
