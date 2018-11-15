@@ -89,7 +89,7 @@
           <div class="sub-text sub-item">
             <span class="index">2. </span> 项目架构：
             <div>
-              <p class="sub-text sub-text-box index-two"> <span class="index">1. </span> 主要库：Nuxt + Vue + Axios + Vuex + babel-polyfill + Less + babel 7</p>
+              <p class="sub-text sub-text-box index-two"> <span class="index">1. </span> 主要库：<span class="active-text">Nuxt</span> + Vue + Axios + Vuex + babel-polyfill + Less + babel 7</p>
               <p class="sub-text sub-text-box index-two"> <span class="index">2. </span> 工具：Git , Webpack , Eslint , JsDoc</p>
             </div>
           </div>
@@ -97,10 +97,10 @@
           <div class="sub-text sub-item">
             <span class="index">4. </span> 关键模块：
             <p class="sub-text sub-text-box index-two"><span class="index">1. </span>
-              骨架屏采用服务端渲染，使用嵌套路由切换指定的位置
+              骨架屏采用<span class="active-text">服务端渲染</span>，使用嵌套路由切换指定的位置
             </p>
             <p class="sub-text sub-text-box index-two"><span class="index">2. </span>
-              使用服务端渲染首页加载明显比但页面要快，并且有利于 SEO
+              使用<span class="active-text">服务端渲染</span>首页加载明显比但页面要快，并且有利于 SEO
             </p>
           </div>
 
