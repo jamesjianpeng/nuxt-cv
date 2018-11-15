@@ -1,31 +1,29 @@
 <template>
   <section class="container">
-    <div>
+    <!-- <div>
       <logo/>
       <h1 class="title">
-        James hello world Nuxt play ~
-        <br />
-        <a href="https://www.pengjiandry.com">彭涧的博客</a>
+        James <a href="https://www.pengjiandry.com">彭涧的博客</a>
       </h1>
-    </div>
+    </div> -->
+    <cv />
   </section>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
-
+import Cv from '~/components/cv'
 export default {
   components: {
-    Logo
+    Logo,
+    Cv
   }
 }
 </script>
 
 <style>
-a {
-  text-decoration: none;
-}
-.container {
+
+/* .container {
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -53,5 +51,5 @@ a {
 
 .links {
   padding-top: 15px;
-}
+} */
 </style>

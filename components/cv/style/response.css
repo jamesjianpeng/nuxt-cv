@@ -1,0 +1,35 @@
+@media screen and (max-width:4000px){
+  main section { margin-top: 10px; width: 100%; }
+}
+
+@media screen and (max-width:1000px){
+  .wrapper {
+    width: 100%;
+    box-shadow: none;
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width:650px){
+  header { text-align: center; }
+  .title .name { float: none; }
+  .title .job { float: none; }
+  .info { float: none; }
+  .contact { float: none; margin-top: 10px;}
+  .contact ul li { text-align: center; }
+  .padding-ul {
+    padding: .5em .9em .5em;
+  }
+  .padding-l {
+    padding: 10px 0 0 0;
+  }
+  main section ul li { margin: 10px 0; }
+  main section .sub-text { margin: 0 0 0 15px; }
+  main section .sub-item { margin-top: 15px; }
+  main section .sub-text-box { margin-top: .5em; margin-bottom: .5em; }
+  main section .center.lg-show { display: none; }
+  main section .center.sm-show { display: inline-block; }
+}
+
+@media screen and (max-width:420px){
+}

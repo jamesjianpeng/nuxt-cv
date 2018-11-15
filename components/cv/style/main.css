@@ -1,0 +1,107 @@
+.padding-l {
+  padding: 10px 15px;
+}
+.padding-ul {
+  padding: 30px 35px 10px;
+}
+.padding-m {
+  padding: 6px 10px;
+}
+
+.float-right {
+  float: right;
+}
+.float-left {
+  float: left;
+}
+.top-tab {
+  position: relative;
+  margin-top: 30px;
+}
+.margin-left-10 {
+  margin-left: 10px;
+}
+.pointer {
+  cursor: pointer !important;
+}
+
+.top-tab::after {
+  content: '实践经历';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-top: -18px;
+  margin-left: -48px;
+  background-color: #eee;
+  padding: 6px 20px;
+  border-radius: 18px;
+}
+.top-tab::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+}
+.wrapper {
+  width: 1000px;
+  margin: 10px auto;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  box-shadow: 0 0 15px silver;
+}
+.active {
+  color: #fff;
+  background-color: #64b5f6;
+  transition: .3s ear;
+}
+
+.active-text {
+  color: #64b5f6;
+}
+
+.text-box {
+  margin-top: 10px;
+}
+.sub-text-box {
+  margin-top: 4px;
+}
+main section .center.lg-show {
+  display: inline-block;
+}
+main section .center.sm-show {
+  display: none;
+}
+
+/*icon*/
+.iconfont-icon { font-size: 16px; margin-left: 4px; }
+.contact ul li { text-align: right; }
+.tab { border: 1px solid #64B5F6; display: inline-block; padding: 0 10px; color: #64b5f6; border-radius: 4px; }
+.title { margin-bottom: 20px; padding: 28px 0 12px; border-bottom: 2px solid rgba(0,0,0,.1);}
+.title h1 { margin-right: 20px; font-size: 30px;}
+.title h2 { line-height: 60px;font-size: 20px; font-weight: 200; }
+.title h1 { margin-right: 20px;}
+.title .name { color: #fff; }
+.title .name > h1 { display: inline-block;}
+.title .job { color: #fff;}
+.index { display: inline-block; margin-right: 10px; color: #888;}
+.index-two { color: #888; }
+.first-item { margin-top: 24px;}
+
+header { background-color: #64B5F6; margin-bottom: 45px;}
+header.padding-l { padding-bottom: 35px; }
+header ul li { color: #fff; }
+header ul li a { color: #fff; }
+/* main section { float: left; width: 48%; } */
+main section ul li { margin: 1.5em 0; }
+main section .sub-text { margin: 0 0 0 2em; }
+main section .sub-item { margin-top: 2em; }
+main section .sub-text-box { margin-top: .5em; margin-bottom: .5em; }
+/* main section:nth-child(2n) { padding-left: 2%; } */
+main section:nth-child(1) > .top-tab::after { content: '实践经历'; }
+main section:nth-child(2) > .top-tab::after { content: '项目经验'; }
+main section:nth-child(3) > .top-tab::after { content: '个人作品'; }
+main section:nth-child(4) > .top-tab::after { content: '技术栈'; }
+main section .center { display: block;margin: 0 20px; }
+footer { text-align: center; color: #888; margin-top: 20px; margin-bottom: 30px;}
