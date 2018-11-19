@@ -1,0 +1,7 @@
+.content-font-size {
+      font-size: 20px;
+}
+
+@function get-half($n) {
+      @return $n / 2;
+}
