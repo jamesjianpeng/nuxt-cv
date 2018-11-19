@@ -6,6 +6,7 @@ module.exports = {
       port: 3000,
       host: 'localhost'
   },
+
   /*
   ** Headers of the page
   */
@@ -30,6 +31,9 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    "~/assets/style/functions.scss",
+    "~/assets/style/cursor.css",
+    "~/assets/style/normalize.css"
   ],
 
   /*
