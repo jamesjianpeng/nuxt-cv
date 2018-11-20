@@ -2,9 +2,9 @@ const Koa = require('koa');
 const Router = require('koa-router');
 const app = new Koa();
 const router = new Router();
-const https = require('https');
-const fs = require('fs');
-const enforceHttps = require('koa-sslify');
+// const https = require('https');
+// const fs = require('fs');
+// const enforceHttps = require('koa-sslify');
 // const mysql = require('mysql');
 
 /**
@@ -71,7 +71,7 @@ router.get('/hello', (ctx, next) => {
 });
       
 app
-.use(enforceHttps())
+// .use(enforceHttps())
 .use(setHeader)
 .use(router.routes())
 .use(router.allowedMethods());
