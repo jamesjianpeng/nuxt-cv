@@ -41,6 +41,9 @@
                         </li>
                     </ul>
                 </li> -->
+                <li class="item">
+                    <nuxt-link to="/plugins/axios" class="nav-text">axios test</nuxt-link>
+                </li>
                 <!-- <li class="item">
                     <nuxt-link to="/threejs" class="nav-text">threejs</nuxt-link>
                     <ul class="sub-item-content">
