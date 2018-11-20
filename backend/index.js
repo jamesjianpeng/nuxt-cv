@@ -2,7 +2,9 @@ const Koa = require('koa');
 const Router = require('koa-router');
 const app = new Koa();
 const router = new Router();
-
+const https = require('https');
+const fs = require('fs');
+const enforceHttps = require('koa-sslify');
 const mysql = require('mysql');
 
 /**
@@ -14,7 +16,7 @@ const options = {
   user: 'root',
   password: 'Pj-199511',
   insecureAuth : true,
-  database: 'NodeTest',
+  database: 'studentCourseSystem',
   path: '/'
 }
 
@@ -46,7 +48,7 @@ const setHeader = async (ctx, next) => {
 
 const getQueryData = () => {
     return new Promise((reslove,reject) => {
-        connection.query('SELECT * FROM Product', (error, results/*, fields */) => {
+        connection.query('SHOW COLUMNS FROM students', (error, results, fields) => {
             if (error) throw error;
             if (results.length) {
                 results.map((item) => {
@@ -70,8 +72,16 @@ router.get('/hello', (ctx, next) => {
 });
       
 app
+.use(enforceHttps())
 .use(setHeader)
 .use(router.routes())
 .use(router.allowedMethods());
 
-app.listen(3001);
+// app.listen(3001);
+
+// SSL options
+var httpsOptions = {
+    key: fs.readFileSync('/usr/local/etc/nginx/ssl/pengjiandry.com.key'),
+    cert: fs.readFileSync('/usr/local/etc/nginx/ssl/pengjiandry.com.crt')
+}
+https.createServer(httpsOptions, app.callback()).listen(443);
