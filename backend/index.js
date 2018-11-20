@@ -76,20 +76,21 @@ app
 .use(router.routes())
 .use(router.allowedMethods());
 
-const argv = Array.from(process.argv)
-let httpsOptions = null
-if (argv.includes('local')) {
-    httpsOptions = {
-        key: fs.readFileSync('/usr/local/etc/nginx/ssl/pengjiandry.com.key'),
-        cert: fs.readFileSync('/usr/local/etc/nginx/ssl/pengjiandry.com.crt')
-    }
-} else {
-    /** 
-     * @description 线上的环境 
-     */
-    httpsOptions = {
-        key: fs.readFileSync('/home/nginx/ssl/pengjiandry.com/pengjiandry.com.crt'),
-        cert: fs.readFileSync('/home/nginx/ssl/pengjiandry.com/pengjiandry.com.key')
-    }
-}
-https.createServer(httpsOptions, app.callback()).listen(443);
+app.listen(3001)
+// const argv = Array.from(process.argv)
+// let httpsOptions = null
+// if (argv.includes('local')) {
+//     httpsOptions = {
+//         key: fs.readFileSync('/usr/local/etc/nginx/ssl/pengjiandry.com.key'),
+//         cert: fs.readFileSync('/usr/local/etc/nginx/ssl/pengjiandry.com.crt')
+//     }
+// } else {
+//     /** 
+//      * @description 线上的环境 
+//      */
+//     httpsOptions = {
+//         key: fs.readFileSync('/home/nginx/ssl/pengjiandry.com/pengjiandry.com.crt'),
+//         cert: fs.readFileSync('/home/nginx/ssl/pengjiandry.com/pengjiandry.com.key')
+//     }
+// }
+// https.createServer(httpsOptions, app.callback()).listen(443);
