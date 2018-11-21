@@ -33,17 +33,29 @@
                         </li>
                     </ul>
                 </li>
-                <!-- <li class="item">
+                <li class="item">
                     <nuxt-link to="/mysqlPractice" class="nav-text">MySQL的实践</nuxt-link>
                     <ul class="sub-item-content">
                         <li>
                             <nuxt-link to="/mysqlPractice/studentCourseSystem" class="nav-text">（一）学生课程管理系统</nuxt-link>
                         </li>
                     </ul>
-                </li> -->
-                <li class="item">
-                    <nuxt-link to="/plugins/axios" class="nav-text">axios test</nuxt-link>
                 </li>
+                <li class="item">
+                    <nuxt-link to="/mysqlPractice" class="nav-text">plugin and test</nuxt-link>
+                    <ul class="sub-item-content">
+                        <li>
+                            <nuxt-link to="/plugins/axios" class="nav-text">axios test</nuxt-link>
+                        </li>
+                        <li>
+                            <nuxt-link to="/plugins/vuex" class="nav-text">vuex test</nuxt-link>
+                        </li>
+                        <li>
+                            <nuxt-link to="/plugins/lifeCycle" class="nav-text">lifeCycle</nuxt-link>
+                        </li>
+                    </ul>
+                </li>
+
                 <!-- <li class="item">
                     <nuxt-link to="/threejs" class="nav-text">threejs</nuxt-link>
                     <ul class="sub-item-content">
