@@ -86,7 +86,7 @@
 export default {
     name: 'VuexNoNamespaced',
     mounted() {
-        console.log('%c 全局路由 %c - beforeEach', 'background: #5C6BC0; color: #fff;', 'background: #fff; color: #5C6BC0;')
+        console.log('%c store %c 不使用 namespaced 可能会出现的问题', 'background: #5C6BC0; color: #fff;', 'background: #fff; color: #5C6BC0;')
         console.log(this.$store)
         console.log(this.$store.commit('increment'))
         console.log(this.$store)
