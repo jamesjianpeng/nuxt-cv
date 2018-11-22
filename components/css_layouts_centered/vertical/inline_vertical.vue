@@ -64,7 +64,7 @@
             </div>
 
             <div class="block-bg block-vertical-third">
-                <sapn class="third-inner">第三种方式：定位，不管子元素的高度是否确定都适用，需要借助 CSS3 中的 transform:</sapn>
+                <span class="third-inner">第三种方式：定位，不管子元素的高度是否确定都适用，需要借助 CSS3 中的 transform:</span>
             </div>
         <div>
 <pre>
