@@ -1,0 +1,34 @@
+$mainColorLigt: #48a999;
+$layoutBgColor: #009688;
+$mainColor: #004c40;
+$blockBgColor: #c67100;
+$inlineColor: #6ec6ff;
+$hrColor: #ffd54f;
+$bgColor: #6ec6ff;
+$textColoe: #fff;
+$marginNormal: 15px;
+$marginSmall: 8px;
+$height: 38px;
+
+li {
+    list-style: none;
+}
+html {
+    font-size: 40px;
+}
+
+pre {
+    padding: $marginSmall;
+    border: 2px dashed $inlineColor;
+}
+hr {
+    border: 2px solid $hrColor;
+    margin-bottom: $marginNormal * 2;
+}
+
+.no {
+    color: $mainColorLigt;
+    font-size: 40px;
+    font-weight: 500;
+    font-style: normal;
+}

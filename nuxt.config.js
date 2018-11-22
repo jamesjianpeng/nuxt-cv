@@ -33,7 +33,7 @@ module.exports = {
   css: [
     "~/assets/style/functions.scss",
     "~/assets/style/cursor.css",
-    "~/assets/style/normalize.css"
+    "~/assets/style/normalize.scss"
   ],
 
   /*
