@@ -5,9 +5,17 @@
 <script>
 export default {
     name: 'GoBack',
+    props: {
+        route: {
+            type: [String],
+            default() {
+                return '/home'
+            }
+        }
+    },
     methods: {
         goback() {
-            this.$router.push({ path: '/home' })
+            this.$router.push({ path: this.route })
         }
     }
 }
