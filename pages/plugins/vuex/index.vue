@@ -1,5 +1,8 @@
 <template>
     <div>
+        <div>
+            <GoBack />
+        </div>
         <ul>
             <li>
                 <nuxt-link to="/plugins/vuex/noNamespaced">no namespaced (不使用 namespaced 可能会出现的问题)</nuxt-link>
@@ -10,6 +13,8 @@
 </template>
 
 <script>
+import GoBack from '~/components/common/goBack.vue'
+
 export default {
     name: 'VuexIndex',
     mounted() {
@@ -17,6 +22,9 @@ export default {
         console.log(this.$store)
         console.log(this.$store.commit('increment'))
         console.log(this.$store)
+    },
+    components: {
+        GoBack
     }
 }
 </script>
