@@ -42,6 +42,14 @@
                     </ul>
                 </li>
                 <li class="item">
+                    <nuxt-link to="/mysqlPractice" class="nav-text">JavaScript</nuxt-link>
+                    <ul class="sub-item-content">
+                        <li>
+                            <nuxt-link to="/oo" class="nav-text">oo</nuxt-link>
+                        </li>
+                    </ul>
+                </li>
+                <li class="item">
                     <nuxt-link to="/mysqlPractice" class="nav-text">plugin and test</nuxt-link>
                     <ul class="sub-item-content">
                         <li>
