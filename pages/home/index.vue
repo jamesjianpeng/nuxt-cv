@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="home">
-            hello! welcome my world!!
+            hello! welcome my world
             <ul class="item-content">
                 <li class="item">
                     <nuxt-link to="/css" class="nav-text">CSS</nuxt-link>
@@ -28,6 +28,10 @@
                                 </li>
                                 <li>
                                     <nuxt-link to="/css/layouts/centered/horizontalVerticalCentered" class="nav-text">水平垂直居中</nuxt-link>
+                                </li>
+                                <li>
+                                    多栏布局：
+                                    <nuxt-link to="/css/layouts/columns/flexTwo" class="nav-text">flex 两栏布局</nuxt-link>
                                 </li>
                             </ul>
                         </li>
