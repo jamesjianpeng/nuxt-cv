@@ -17,6 +17,10 @@
                                     <nuxt-link to="/css/layouts/centered/inline/horizontal" class="nav-text">内联元素</nuxt-link>
                                 </li> -->
                                 <li>
+                                    优先级规则:
+                                    <nuxt-link to="/css/priority" class="nav-text">CSS 选择器和特殊性</nuxt-link>
+                                </li>
+                                <li>
                                     水平居中:
                                     <nuxt-link to="/css/layouts/centered/inline/horizontal" class="nav-text">内联元素</nuxt-link>
                                     <nuxt-link to="/css/layouts/centered/block/horizontal" class="nav-text">块元素</nuxt-link>
