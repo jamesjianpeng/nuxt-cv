@@ -32,3 +32,22 @@ hr {
     font-weight: 500;
     font-style: normal;
 }
+
+.item-content {
+    .item {
+        margin-top: $marginNormal;
+    }
+    .item > a {
+    }
+}
+.sub-item-content {
+    margin-top: $marginSmall;
+    .sub-item > a {
+    }
+}
+.nav-text {
+    color: $mainColorLigt;
+    &:hover {
+        color: $mainColor;
+    }
+}
