@@ -25,7 +25,8 @@
 </template>
 <script>
 export default {
-    name: 'ooIndex'
+    name: 'ooIndex',
+    layout: 'home',
 }
 </script>
 

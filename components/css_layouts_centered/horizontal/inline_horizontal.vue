@@ -84,7 +84,7 @@ $mainColorLigt: #48a999;
 $mainColor: #004c40;
 $hrColor: #ffd54f;
 $inlineColor: #6ec6ff;
-$textColoe: #fff;
+$textColor: #fff;
 $marginNormal: 15px;
 $marginSmall: 8px;
 $height: 38px;
@@ -123,7 +123,7 @@ $height: 38px;
 }
 .inline-bg {
     background: $inlineColor;
-    color: $textColoe;
+    color: $textColor;
     padding: $marginNormal;
     height: $height;
     line-height: $height;

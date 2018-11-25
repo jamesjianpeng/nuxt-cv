@@ -48,7 +48,7 @@ $mainColor: #004c40;
 $blockBgColor: #c67100;
 $hrColor: #ffd54f;
 $bgColor: #6ec6ff;
-$textColoe: #fff;
+$textColor: #fff;
 $marginNormal: 15px;
 $marginSmall: 8px;
 $height: 38px;

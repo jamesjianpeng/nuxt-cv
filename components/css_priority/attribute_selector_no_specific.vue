@@ -152,7 +152,7 @@ $blockBgColor: #c67100;
 $inlineColor: #6ec6ff;
 $hrColor: #ffd54f;
 $bgColor: #6ec6ff;
-$textColoe: #fff;
+$textColor: #fff;
 $marginNormal: 15px;
 $marginSmall: 8px;
 $height: 38px;

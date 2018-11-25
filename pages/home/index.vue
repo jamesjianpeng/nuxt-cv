@@ -88,6 +88,14 @@
     </div>
 </template>
 
+<script>
+export default {
+    name: 'HomeIndex',
+    layout: 'home',
+}
+</script>
+
+
 <style lang="scss" scoped>
 $mainColorLigt: #48a999;
 $mainColor: #004c40;

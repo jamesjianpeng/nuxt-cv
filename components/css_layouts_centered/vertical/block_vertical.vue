@@ -13,7 +13,7 @@
 <pre>
 .block-bg { // 父元素
     background: $bgColor;
-    color: $textColoe;
+    color: $textColor;
     padding: $marginNormal; // 注意这一句
     min-height: $height;
     line-height: $height;
@@ -106,7 +106,7 @@ $mainColor: #004c40;
 $blockBgColor: #c67100;
 $hrColor: #ffd54f;
 $bgColor: #6ec6ff;
-$textColoe: #fff;
+$textColor: #fff;
 $marginNormal: 15px;
 $marginSmall: 8px;
 $height: 38px;
@@ -118,7 +118,7 @@ $height: 38px;
 }
 .block-bg {
     background: $bgColor;
-    color: $textColoe;
+    color: $textColor;
     padding: $marginNormal;
     min-height: $height;
     line-height: $height;
