@@ -14,12 +14,6 @@
 <script>
 export default {
     name: 'NavItem',
-    watch: {
-        active(value) {
-            console.log(this.active)
-            this.innerActive = value
-        }
-    },
     data() {
         return {
             innerActive: false

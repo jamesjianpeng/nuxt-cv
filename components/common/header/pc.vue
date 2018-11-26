@@ -13,7 +13,6 @@
             </li>
         </ul>
     </header>
-    <nuxt/>
   </div>
 </template>
 
