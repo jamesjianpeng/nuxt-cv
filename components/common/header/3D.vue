@@ -174,6 +174,7 @@ header {
             line-height: $height;
             position: relative;
             z-index: 1;
+            margin: 0 2px; 
             &:hover {
                 .drop-list {
                     display: block;
