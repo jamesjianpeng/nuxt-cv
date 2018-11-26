@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="home">
+        <div class="home wrap">
             <ul class="item-content">
                 <li class="item">
                     <nuxt-link to="/oo" class="nav-text">oo</nuxt-link>

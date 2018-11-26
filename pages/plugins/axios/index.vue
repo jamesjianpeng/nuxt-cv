@@ -1,12 +1,15 @@
 <template>
     <div>
-        axios
+        <div class="wrap">
+            axios
+        </div>
     </div>
 </template>
 
 <script>
 export default {
     name: 'PluginsAxios',
+    layout: 'home',
     async mounted() {
         console.log()
         const res = await this.$axios.get('https://cvapi.pengjiandry.com/hello')
