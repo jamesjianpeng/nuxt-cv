@@ -59,3 +59,9 @@ hr {
 .cursor {
     cursor: pointer;
 }
+
+.wrap {
+    width: 960px;
+    margin: 0 auto;
+    transition: all .4s ease-in-out;
+}
