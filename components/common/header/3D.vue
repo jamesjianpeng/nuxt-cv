@@ -1,25 +1,28 @@
 <template>
   <div>
     <div class="header-content"
-        :class="{ 'full-wrap': isUp }">
+        :class="{ 'full-wrap': isUp, 'init-wrap': isInit }">
         <header class="wrap"
-        :class="{ 'full-wrap': isUp }">
+        :class="{ 'full-wrap': isUp, 'init-wrap': isInit }">
             <h1>彭涧</h1>
             <ul class="nav" @click="toggle">
                 <li
                     v-for="(item, index) in header"
                     :key="index"
                     class="nav-item cursor"
+                    :class="{'nav-item-active': $route.path.includes(item.path)}"
                 >
                     <NavItem 
                         :name="item.name"
                         :active="$route.path.includes(item.path)" />
 
-                    <ul class="drop-list" v-if="item.child.length">
+                    <ul class="drop-list"
+                        :class="{ 'init-wrap': isInit }" v-if="item.child.length">
                         <nuxt-link 
                             v-for="(childItem, childIndex) in item.child"
                             :key="childIndex + 'child'"
                             class="drop-item" 
+                            :class="{ 'drop-item-last': isInit && (childIndex === item.child.length - 1) }"
                             :to="childItem.path">{{ childItem.name }}</nuxt-link>
                     </ul>
                 </li>
@@ -43,8 +46,9 @@ export default {
     data() {
         return {
             header,
-            isUp: false,
+            isUp: false, // 滚动动画的控制
             topList: [],
+            isInit: true, // 初始化的时候
         }
     },
     created () {
@@ -52,17 +56,19 @@ export default {
     },
     mounted() {
         const el = document.querySelector('.scroll-wrap');
+        const time = this.isInit ? 0 : 100
         const func = throttle(() => {
             this.sroll()
-        }, 50)
+        }, time)
         window.onscroll = (e) => {
             func()
         }
     },
     methods: {
         sroll() {
+            this.isInit = false;
             const top = document.body.scrollTop || document.documentElement.scrollTop;
-            this.topList.push(top)
+            this.topList.push(top);
             /**
              * @description 
              * 1. 使用一个数组保存滚动距离，最大保存长度为 3
@@ -71,6 +77,9 @@ export default {
              *    （1） 若最后的值大于倒数第二个则是向下滚
              *    （2） 若最后的值小倒数第二个则是向上滚
              */
+            if (this.topList.length >= 3 && this.topList[2] === 0) {
+                this.isInit = true;
+            }
             if (this.topList.length >= 3) {
                 this.isUp = this.topList[2] - this.topList[1] > 0 ? true : false;
                 this.topList.shift()
@@ -133,7 +142,26 @@ $headerActive: #E0E0E0;
     width: 100%;
     // height: 238px;
 }
-.wrap.full-wrap {
+
+.header-content.init-wrap {
+    width: 100%;
+    height: 40vh;
+    // min-height: 100px;
+    background: $headerBg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // height: 238px;
+}
+header.init-wrap {
+    width: 100%;
+    background: $headerBg;
+    border-radius: 0px;
+    top: 20vh;
+    transform: translate(-50%, -50%);
+    padding: 10px 0;
+}
+header.full-wrap {
     width: 100%;
     background: $headerBg;
     border-radius: 0px;
@@ -168,16 +196,31 @@ header {
         perspective: 100000px;
         transform-style: preserve-3d;
         position: relative;
-
+        .nav-item.nav-item-active {
+            border: 2px solid $layoutBgColor;
+        }
         .nav-item {
             height: $height;
             line-height: $height;
             position: relative;
             z-index: 1;
             margin: 0 2px; 
+            border: 2px solid rgba(0, 0, 0, 0);
             &:hover {
+                // .drop-list.init-wrap {
+                //     border: 2px solid $layoutBgColor;
+                // }
+                
+                border: 2px solid $layoutBgColor;
+                // box-shadow: 0 -2px 0 4px $layoutBgColor inset;
                 .drop-list {
                     display: block;
+                    box-sizing: border-box;
+                    .drop-item {
+                        border: 2px solid $layoutBgColor;
+                        border-top: none;
+                        border-bottom: none;
+                    }
                     .drop-item:nth-child(1) {
                         animation: drop .3s;
                         animation-fill-mode:forwards;
@@ -191,6 +234,9 @@ header {
                         animation: drop-last .2s;
                         animation-delay: .4s;
                         animation-fill-mode:forwards;
+                    }
+                    .drop-item-last {
+                        border-bottom: 2px solid $layoutBgColor;
                     }
                     // 为什么选择 animation 而不是 transition 在动画消失的时候不好控制
                     // .drop-item:nth-child(2) {
@@ -222,6 +268,11 @@ header {
                 &:hover {
                     box-shadow: 0 -2px 0 0 $layoutBgColor inset;
                     color: $layoutBgColor;
+                }
+            }
+            .drop-item:last-child  {
+                &:hover {
+                    box-shadow: none;
                 }
             }
             // div {
