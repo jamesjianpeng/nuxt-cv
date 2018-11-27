@@ -19,6 +19,16 @@ export default [
         ],
     },
     {
+        name: 'Game',
+        path: '/game',
+        child: [
+            {
+                name: 'dragAndDrop',
+                path: '/game/dragAndDrop',
+            }
+        ]
+    },
+    {
         name: 'JavaScript',
         path: '/JavaScript',
         child: [
