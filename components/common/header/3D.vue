@@ -54,7 +54,7 @@ export default {
         const el = document.querySelector('.scroll-wrap');
         const func = throttle(() => {
             this.sroll()
-        }, 300)
+        }, 50)
         window.onscroll = (e) => {
             func()
         }
