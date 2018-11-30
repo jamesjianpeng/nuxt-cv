@@ -4,7 +4,9 @@
         :class="{ 'full-wrap': isUp, 'init-wrap': isInit }">
         <header class="wrap"
         :class="{ 'full-wrap': isUp, 'init-wrap': isInit }">
-            <h1>彭涧</h1>
+            <h1 class="logo cursor">
+                <a href="https://www.pengjiandry.com" target="_blank">彭涧</a>
+            </h1>
             <ul class="nav" @click="toggle">
                 <li
                     v-for="(item, index) in header"
@@ -15,16 +17,12 @@
                     <NavItem 
                         :name="item.name"
                         :active="$route.path.includes(item.path)" />
-
-                    <ul class="drop-list"
-                        :class="{ 'init-wrap': isInit }" v-if="item.child.length">
-                        <nuxt-link 
-                            v-for="(childItem, childIndex) in item.child"
-                            :key="childIndex + 'child'"
-                            class="drop-item" 
-                            :class="{ 'drop-item-last': isInit && (childIndex === item.child.length - 1) }"
-                            :to="childItem.path">{{ childItem.name }}</nuxt-link>
-                    </ul>
+                    <div v-if="item.child.length">
+                        <DropList 
+                            :child="item.child"
+                            :isInit="isInit"
+                        />
+                    </div>
                 </li>
             </ul>
         </header>
@@ -37,11 +35,13 @@
 import header from '~/components/common/header/header.js'
 import { throttle } from '~/assets/util'
 import NavItem from '~/components/common/header/nav_3D.vue'
+import DropList from '~/components/common/header/drop_list.vue'
 
 export default {
     name: 'Home3DHeader',
     components: {
         NavItem,
+        DropList
     },
     data() {
         return {
@@ -79,6 +79,7 @@ export default {
              */
             if (this.topList.length >= 3 && this.topList[2] === 0) {
                 this.isInit = true;
+                // this.isFixed = false;
             }
             if (this.topList.length >= 3) {
                 this.isUp = this.topList[2] - this.topList[1] > 0 ? true : false;
@@ -133,26 +134,27 @@ $marginSmall: 8px;
 $height: 38px;
 $headerBg: #212121;
 $headerActive: #E0E0E0;
+
 .header-content {
     width: 100%;
     height: 58px;
     transition: all .4s ease-in-out;
+    position: relative;
 }
+
 .header-content.full-wrap {
     width: 100%;
-    // height: 238px;
 }
 
 .header-content.init-wrap {
     width: 100%;
     height: 40vh;
-    // min-height: 100px;
     background: $headerBg;
     display: flex;
     justify-content: center;
     align-items: center;
-    // height: 238px;
 }
+
 header.init-wrap {
     width: 100%;
     background: $headerBg;
@@ -161,6 +163,7 @@ header.init-wrap {
     transform: translate(-50%, -50%);
     padding: 10px 0;
 }
+
 header.full-wrap {
     width: 100%;
     background: $headerBg;
@@ -168,23 +171,33 @@ header.full-wrap {
     top: 0px;
     padding: 10px 0;
 }
+
+header.fixed-wrap {
+    position: fixed;
+}
+
 header {
     display: flex;
     justify-content: center;
     align-items: center;
     height: $height;
-    // max-width: 960px;
     margin: 0 auto;
     background: $headerBg;
     color: $textColor;
+    // position: absolute;
     position: fixed;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 4px;
-    h1 {
+    z-index: 2;
+    h1.logo {
         font-size: 28px;
         margin-right: 40px; 
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
     }
     .nav {
         display: flex;
@@ -207,95 +220,8 @@ header {
             margin: 0 2px; 
             border: 2px solid rgba(0, 0, 0, 0);
             &:hover {
-                // .drop-list.init-wrap {
-                //     border: 2px solid $layoutBgColor;
-                // }
-                
                 border: 2px solid $layoutBgColor;
-                // box-shadow: 0 -2px 0 4px $layoutBgColor inset;
-                .drop-list {
-                    display: block;
-                    box-sizing: border-box;
-                    .drop-item {
-                        border: 2px solid $layoutBgColor;
-                        border-top: none;
-                        border-bottom: none;
-                    }
-                    .drop-item:nth-child(1) {
-                        animation: drop .3s;
-                        animation-fill-mode:forwards;
-                    }
-                    .drop-item:nth-child(2) {
-                        animation: drop .2s;
-                        animation-delay: .2s;
-                        animation-fill-mode:forwards;
-                    }
-                    .drop-item:nth-child(3) {
-                        animation: drop-last .2s;
-                        animation-delay: .4s;
-                        animation-fill-mode:forwards;
-                    }
-                    .drop-item-last {
-                        border-bottom: 2px solid $layoutBgColor;
-                    }
-                    // 为什么选择 animation 而不是 transition 在动画消失的时候不好控制
-                    // .drop-item:nth-child(2) {
-                    //     transform: rotateX(0deg);
-                    //     transition: all .2s ease-in-out .2s;
-                    // }
-                    // .drop-item:nth-child(3) {
-                    //     transform: rotateX(0deg);
-                    //     transition: all .2s ease-in-out .4s;
-                    // }
-                }   
             }
-        }
-        .drop-list {
-            display: none;
-            position: absolute;
-            top: 38px;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            .drop-item {
-                display: block;
-                color: $textColor;
-                text-decoration: none;
-                transition: all .2s ease-in-out;
-                background: $headerBg;
-                transform-origin: 0 top;
-                transform: rotateX(-90deg);
-                &:hover {
-                    box-shadow: 0 -2px 0 0 $layoutBgColor inset;
-                    color: $layoutBgColor;
-                }
-            }
-            .drop-item:last-child  {
-                &:hover {
-                    box-shadow: none;
-                }
-            }
-            // div {
-            //     animation: drop 5s;
-            //     -moz-animation: drop 5s;	/* Firefox */
-            //     -webkit-animation: drop 5s;	/* Safari 和 Chrome */
-            //     -o-animation: drop 5s;	/* Opera */
-            // }
-            @keyframes drop {
-                from {transform: rotateX(-90deg);}
-                to {transform: rotateX(0deg);}
-            }
-            @keyframes drop-last {
-                0% {transform: rotateX(-90deg);}
-                100% {transform: rotateX(0deg);}
-            }
-            // 第一种方式
-            // .drop-item:nth-child(2) {
-            //     transition: all .2s ease-in-out .2s;
-            // }
-            // .drop-item:nth-child(3) {
-            //     transition: all .2s ease-in-out .4s;
-            // }
         }
         .nav-item-active {
             background: $headerActive;

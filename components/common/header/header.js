@@ -19,12 +19,12 @@ export default [
         ],
     },
     {
-        name: 'Game',
-        path: '/game',
+        name: 'HTML5',
+        path: '/HTML5',
         child: [
             {
                 name: 'dragAndDrop',
-                path: '/game/dragAndDrop',
+                path: '/HTML5/dragAndDrop/drop',
             }
         ]
     },
