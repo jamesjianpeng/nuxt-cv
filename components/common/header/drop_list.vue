@@ -49,12 +49,6 @@ $headerActive: #E0E0E0;
 
 .nav-item {
     &:hover {
-        // .drop-list.init-wrap {
-        //     border: 2px solid $layoutBgColor;
-        // }
-        
-        border: 2px solid $layoutBgColor;
-        // box-shadow: 0 -2px 0 4px $layoutBgColor inset;
         .drop-list {
             display: block;
             box-sizing: border-box;
