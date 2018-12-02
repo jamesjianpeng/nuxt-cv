@@ -12,7 +12,7 @@ export default {
     layout: 'home',
     async mounted() {
         console.log()
-        const res = await this.$axios.get('https://cvapi.pengjiandry.com/hello')
+        const res = await this.$axios.get('https://cv.api.pengjiandry.com.test/')
         console.log(res)
     }
 }

@@ -56,12 +56,20 @@ hr {
     }
 }
 
-.cursor {
+.cursor, .cursor-pointer {
     cursor: pointer;
+}
+.cursor-move {
+    cursor: move;
 }
 
 .wrap {
     width: 960px;
     margin: 0 auto;
     transition: all .2s ease-in-out;
+}
+
+.flex-start {
+    display: flex;
+    justify-content: flex-start;
 }
