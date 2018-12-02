@@ -1,9 +1,11 @@
 
 <template>
+<div>
     <div class="wrap">
         <ul>
             <i class="no">3.</i>
-            <li> 两个区域相互拖拽，并移动元素 </li>
+            <li> 两个区域相互拖拽，并移动元素</li>
+            <li> 注意 dragover 需要阻止默认行为，把拖拽元素移动到释放区域时才能触发 drop</li>
         </ul> 
         <div class="one-content"
             data-type="one"
@@ -59,6 +61,7 @@
             <div class="two-mask" :class="{'mask': twoMask}" v-show="twoMask">需要一层 maxsk</div>
         </div>
     </div>
+</div>
 </template>
 
 <script>

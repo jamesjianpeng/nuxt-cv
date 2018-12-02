@@ -1,13 +1,11 @@
 
 <template>
-<div>
-        <div class="wrap">
-        <i class="no">1.</i>
+    <div>
         <ul>
-            <li> 定义释放区 </li>
-            <li>通过定义 dragenter, dragover, dragleave, drop </li>
-        </ul>
-        <ul class="flex-start drop-content">
+            <li>通过 draggable 可拖拽的目标</li>
+            <li>可拖动目标的是事件:dragstart drag dragend</li>
+        </ul> 
+        <ul class="flex-start drag-content">
             <li 
                 v-for="(item, index) in list"
                 :key="index"
@@ -16,18 +14,17 @@
                 @drag="drag"
                 @dragend="dragend"
                 draggable="true"
-                class="drop-item"
-                :class="{ 'drop-enter cursor-move': item.class }">
+                class="drag-item"
+                :class="{ 'drag-enter cursor-move': item.class }">
                 {{ item.text }}
             </li>
         </ul>
     </div>
-</div>
 </template>
 
 <script>
 export default {
-    name: 'Drop',
+    name: 'DropTwo',
     data() {
         return {
             list: [
@@ -41,31 +38,23 @@ export default {
                     id: 'two',
                     class: ''
                 },
-            ],
-            feedList: []
+            ]
         }
     },
-    mounted() {
-    },
     methods: {
-        /** @description 拖动目标在 拖拽一开始触发 */
         dragstart(e) {
             const index = e.target.dataset.index
             this.list[index].class = true
             console.log('dragstart')
         },
-        
-        /** @description 拖动目标在 拖拽移动过程中一直触发 */
         drag() {
             console.log('drag')
         },
-
-        /** @description 拖动目标在 拖拽结素触发 */
         dragend(e) {
             const index = e.target.dataset.index
             this.list[index].class = false
             console.log('dragend')
-        },
+        }
     }
 }
 </script>
@@ -82,23 +71,14 @@ $textColor: #fff;
 $marginNormal: 15px;
 $marginSmall: 8px;
 $height: 38px;
-.drop-item {
-    border: 1px dashed $layoutBgColor;
+.drag-item {
+    background: $mainColorLigt;
     padding: $marginSmall $marginNormal;
     margin: $marginSmall;
-    color: $layoutBgColor;
-    transition: all .2s ease-in-out;
+    color: #fff;
 }
-.drop-enter {
+.drag-enter {
     background: $mainColorLigt;
     opacity: .5;
-    background: $layoutBgColor;
-    color: #fff;
-    padding-left: $marginNormal * 2;
-    padding-right: $marginNormal * 2;
-}
-.freed-content {
-    min-height: 10vh;
-    border: 1px dashed $blockBgColor;
 }
 </style>

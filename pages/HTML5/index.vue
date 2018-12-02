@@ -6,7 +6,7 @@
                     <li class="item">
                         <ul class="sub-item-content">
                             <li>
-                                <nuxt-link to="/oo/constructorPrototype" class="nav-text">拖拽小游戏</nuxt-link>
+                                <nuxt-link to="/HTML5/dragAndDrop/drop" class="nav-text">拖拽效果</nuxt-link>
                             </li>
                         </ul>
                     </li>

@@ -1,8 +1,12 @@
 
 <template>
-    <div class="wrap">
+<div>
+        <div class="wrap">
         <ul>
             <i class="no">2.</i>
+            <li>通过 draggable 可拖拽的目标</li>
+            <li>可拖动目标的是事件:dragstart drag dragend</li>
+
             <li> 定义释放区 </li>
             <li>通过定义 dragenter, dragover, dragleave, drop </li>
         </ul>
@@ -39,6 +43,7 @@
             </ul>
         </div>
     </div>
+</div>
 </template>
 
 <script>
@@ -75,7 +80,7 @@ export default {
         
         /** @description 拖动目标在 拖拽移动过程中一直触发 */
         drag() {
-            // console.log('drag')
+            console.log('drag');
         },
 
         /** @description 拖动目标在 拖拽结素触发 */

@@ -148,7 +148,7 @@ $headerActive: #E0E0E0;
 
 .header-content.init-wrap {
     width: 100%;
-    height: 40vh;
+    height: 28vh;
     background: $headerBg;
     display: flex;
     justify-content: center;
@@ -159,7 +159,7 @@ header.init-wrap {
     width: 100%;
     background: $headerBg;
     border-radius: 0px;
-    top: 20vh;
+    top: 14vh;
     transform: translate(-50%, -50%);
     padding: 10px 0;
 }
