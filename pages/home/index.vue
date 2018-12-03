@@ -2,7 +2,7 @@
     <div>
         <div class="home wrap scroll-wrap">
             <h1>hello! welcome my world</h1>
-            <div v-for="(item, index) in new Array(60)" :key="index">请在 PC 上滚一滚</div>
+            <div v-for="(item, index) in new Array(2)" :key="index">请在 PC 上滚一滚</div>
         </div>
     </div>
 </template>
