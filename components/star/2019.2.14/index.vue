@@ -34,19 +34,25 @@
                         </div> 
                         <div class="side left">
                             <div class="outer">
-                                <span class="inner">
+                                <span class="inner love-animation">
+                                    <div class="love-item inner-item">
+                                    </div>
                                 </span>
                             </div>
                         </div> 
                         <div class="side right">
                             <div class="outer">
-                                <span class="inner">
+                                <span class="inner love-animation">
+                                    
+                                    <div class="love-item inner-item">
+
+                                    </div>
                                 </span>
                             </div>
                         </div> 
                         <div class="side top">
                             <div class="outer">
-                                <span class="inner">
+                                <span class="inner love-animation">
                                     Love
                                 </span>
                             </div>
@@ -208,14 +214,31 @@ export default {
     -o-animation: move 2.4s ease-out 0s forwards;
         animation: move 2.4s ease-out 0s forwards;
 }
+.love-animation {
+    -webkit-animation: love 1.1s ease-out 0s infinite alternate;
+    -moz-animation: love 1.1s ease-out 0s infinite alternate;
+    -o-animation: love 1.1s ease-out 0s infinite alternate;
+        animation: love 1.1s ease-out 0s infinite alternate;
+}
 @keyframes move {
     0% { 
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
     }
     100% { 
       opacity: 0;
-      transform: translateY(-90px);
+      transform: translateY(-90px) scale(.5);
+    }
+}
+
+@keyframes love {
+    0% { 
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    100% { 
+      opacity: 0.8;
+      transform: translate(-50%, -50%) scale(1.3);
     }
 }
 
@@ -231,6 +254,10 @@ $loveColor: #FF5722;
     background: $loveColor;
     position: relative;
     transform: rotate(45deg);
+}
+.love-item.inner-item {
+    width: 30px !important;
+    height: 30px !important;
 }
 .love-item::before, .love-item::after {
     content: "";
@@ -248,6 +275,12 @@ $loveColor: #FF5722;
     position: absolute;
     top: 0;
     left: -6px;
+}
+.love-item.inner-item::before {
+    top: -15px !important;
+}
+.love-item.inner-item::after {
+    left: -15px !important;
 }
 // ❤️
 </style>
