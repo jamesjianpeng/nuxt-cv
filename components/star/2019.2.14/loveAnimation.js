@@ -1,5 +1,6 @@
 /**
  * @file 爱心交互
+ * @author jamesjianpeng <jamesjianpeng@gmail.com>
  */
 class loveAnimation {
     /**
