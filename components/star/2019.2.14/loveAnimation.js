@@ -1,3 +1,6 @@
+/**
+ * @file 爱心交互
+ */
 class loveAnimation {
     /**
      * 
