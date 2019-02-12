@@ -7,6 +7,10 @@
 </template>
 
 <script>
+/**
+ * @file 我的主页的骨架屏
+ * @author jamesjianpeng
+ */
 // import HomePcHeader from '~/components/common/header/pc.vue';
 import Home3DHeader from '~/components/common/header/3D.vue';
 

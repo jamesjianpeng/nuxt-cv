@@ -66,4 +66,14 @@ export default [
             },
         ],
     },
+    {
+        name: 'Star',
+        path: '/Star',
+        child: [
+            {
+                name:'2019.2.14',
+                path:'/Star/2019.2.14',
+            },
+        ],
+    }
 ]

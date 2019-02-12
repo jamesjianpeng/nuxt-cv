@@ -13,5 +13,8 @@
     "koa-router": "^7.4.0",
     "koa-sslify": "^2.1.2",
     "mysql": "^2.16.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.6"
   }
 }

@@ -11,6 +11,7 @@ export default {
   components: {
     Logo,
     Cv
-  }
+  },
+  created() {}
 }
 </script>
