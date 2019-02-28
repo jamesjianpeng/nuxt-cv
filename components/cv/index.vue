@@ -66,6 +66,12 @@
           <div class="center float-left sm-show">百密信安科技</div>
           <div class="tab float-right">工作</div>
         </li>
+        <li class="clearfix first-item">
+          <div class="float-left"><span class="index-one">4. </span> 2018.11 - 至今 </div>
+          <div class="center float-left lg-show">深圳市易课文化科技有限公司</div>
+          <div class="center float-left sm-show">易课文化</div>
+          <div class="tab float-right">工作</div>
+        </li>
       </ul>
     </section>
 
