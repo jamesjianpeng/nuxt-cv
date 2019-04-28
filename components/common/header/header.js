@@ -67,7 +67,7 @@ export default [
         ],
     },
     {
-        name: 'Star',
+        name: 'Star', // 爱你
         path: '/Star',
         child: [
             {
