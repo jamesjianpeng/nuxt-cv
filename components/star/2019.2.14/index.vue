@@ -79,7 +79,7 @@
 
 <script>
 /**
- * @file 表白魔方
+ * @file 表白魔方，和好 2019.4.26
  * @author jamesjianpeng <jamesjianpeng.gmail.com>
  */
 import loveAnimation from './loveAnimation.js';
